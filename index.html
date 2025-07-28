@@ -205,8 +205,8 @@
                   The Most Reliable Matrimonial Platform for Bangladeshis
                 </h1>
                 <h4>
-                  Find Your Perfect Match with Bangladesh's Most Trusted Matrimonial
-                  Service
+                  Find Your Perfect Match with Bangladesh's Most Trusted
+                  Matrimonial Service
                 </h4>
                 <a href="#" class="btn_register-ht"
                   ><img src="register-icon.svg" alt="" />Create Account</a
@@ -214,10 +214,28 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="banner_sidebar text-center">
-                <img src="asset/happy-couple.png" alt="" class="bannermile" />
-                <img src="asset/heart12.png" alt="" class="heartone" />
-                <img src="asset/heart12.png" alt="" class="hearttwo" />
+              <div class="heart-animation-area">
+                <!-- এখানে আপনি যতগুলো খুশি হার্ট যোগ করতে পারেন -->
+                <img
+                  src="asset/heart12.png"
+                  alt="Floating Heart"
+                  class="heart heart1"
+                />
+                <img
+                  src="asset/heart12.png"
+                  alt="Floating Heart"
+                  class="heart heart2"
+                />
+                <img
+                  src="asset/heart12.png"
+                  alt="Floating Heart"
+                  class="heart heart3"
+                />
+                <img
+                  src="asset/heart12.png"
+                  alt="Floating Heart"
+                  class="heart heart4"
+                />
               </div>
             </div>
           </div>
@@ -953,10 +971,7 @@
                     class="bg-howProf"
                   />
                   <div class="box_howicons">
-                    <img
-                      src="svg/how2.svg"
-                      alt=""
-                    />
+                    <img src="svg/how2.svg" alt="" />
                   </div>
                 </div>
                 <div class="how_right-text">
@@ -1476,12 +1491,11 @@
     <!----footer start-- -->
 
     <!-- download apps buttons sticky  -->
-    <a target="_blank" href="#" class="sticky-btn-download"
+    <!-- <a target="_blank" href="#" class="sticky-btn-download"
       ><img
         src="asset/playstore_sticky.png"
         style="position: relative; right: 12px"
-      />Download App</a
-    >
+      />Download App</a> -->
 
     <!-- ---progress bottom to top--- -->
     <div class="progress-wrap">
@@ -1502,15 +1516,10 @@
       </svg>
     </div>
 
-    <style>
-      /* #freicontain0{
-		left: 868px !important;
-	} */
-    </style>
     <!-- =========== Footer Start  =========== -->
     <footer class="footer-bg">
       <!-- code 123 for whatsapp icon add start -->
-      <div class="wrapper ctmset wrapper-1">
+      <!-- <div class="wrapper ctmset wrapper-1">
         <ul>
           <a target="_blank" href="#"></a>
           <li class="whatsapp">
@@ -1526,7 +1535,7 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- code 123 for whatsapp icon add End -->
       <div class="container">
         <div class="row margin-top-20 footer-brd-btm">
@@ -1677,6 +1686,32 @@
         </div>
       </div>
     </footer>
+    <!-- ========================================================= -->
+    <!-- ============== নতুন ভিডিও মডেলের HTML কোড =============== -->
+    <!-- ========================================================= -->
+    <div class="video-modal-overlay" id="videoModal">
+      <div class="video-modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div>
+            <span class="announcement-text">Announcement</span>
+          </div>
+          <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+        </div>
+
+        <!-- Modal Video -->
+        <div class="modal-video-container">
+          <video controls autoplay muted loop>
+            <!-- গুরুত্বপূর্ণ: এখানে আপনার নিজের ভিডিও ফাইলের পথ দিন -->
+            <source src="video/announcement.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <!-- ========================================================= -->
+    <!-- ============== নতুন ভিডিও মডেল এখানে শেষ ================ -->
+    <!-- ========================================================= -->
 
     <!-- =========== Footer End  =========== -->
 
@@ -1788,6 +1823,41 @@
             return false;
           });
         }
+        // =========================================================
+        // নতুন কোড: ভিডিও মডেল দেখানো এবং বন্ধ করার জন্য
+        // =========================================================
+        function showVideoModal() {
+          $("#videoModal").addClass("show");
+          // ভিডিওটি প্লে করার চেষ্টা করা হচ্ছে
+          $("#videoModal video")
+            .get(0)
+            .play()
+            .catch((error) => {
+              console.log(
+                "Autoplay was prevented. User must interact with the page first."
+              );
+            });
+        }
+
+        function closeVideoModal() {
+          var video = $("#videoModal video").get(0);
+          video.pause(); // ভিডিওটি বন্ধ করা হচ্ছে
+          video.currentTime = 0; // ভিডিওটি প্রথম থেকে শুরু করার জন্য
+          $("#videoModal").removeClass("show");
+        }
+
+        // পেজ লোড হওয়ার সাথে সাথেই মডেলটি দেখানোর জন্য
+        showVideoModal();
+
+        // ক্লোজ বাটনে ক্লিক করলে মডেল বন্ধ হবে
+        $("#closeModalBtn").on("click", closeVideoModal);
+
+        // ব্যাকগ্রাউন্ডে ক্লিক করলে মডেল বন্ধ হবে
+        $("#videoModal").on("click", function (event) {
+          if (event.target === this) {
+            closeVideoModal();
+          }
+        });
 
         // count degit
         var counted = 0;

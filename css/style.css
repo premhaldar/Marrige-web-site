@@ -30,62 +30,66 @@ a:focus {
 }
 
 /* #Progress with back to top*/
+/* ========================================================= */
+/* ============== Final CSS for Love Progress Button =============== */
+/* ========================================================= */
 .progress-wrap {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  display: block;
-  border-radius: 50%;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: all 0.3s linear;
-  background-color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s linear;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .progress-wrap.active-progress {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .progress-wrap::after {
-  position: absolute;
-  font-family: "Font Awesome 5 Free", sans-serif !important;
-  font-weight: 900 !important;
-  content: "\f004" !important;
-  text-align: center;
-  line-height: 50px;
-  font-size: 20px;
-  color: hsl(352, 79%, 58%);
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  display: block;
-  z-index: 1;
-  transition: all 0.2s linear;
+    position: absolute;
+    /* Using the correct 'Free' version of the font */
+    font-family: "Font Awesome 5 Free", sans-serif !important; 
+    font-weight: 900 !important; /* This is required for solid icons */
+    content: '\f004' !important; /* The unicode for the heart icon */
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #E94057; /* The pink color for the heart */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    transition: all 0.2s linear;
 }
 
 .progress-wrap:hover::after {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .progress-wrap svg path {
-  fill: none;
+    fill: none;
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: #e94057;
-  stroke-width: 4;
-  box-sizing: border-box;
-  transition: all 200ms linear;
+    stroke: #E94057; /* The color for the progress ring */
+    stroke-width: 4;
+    box-sizing: border-box;
+    transition: all 200ms linear;
 }
 
 @keyframes heartbeat {
@@ -1549,7 +1553,7 @@ ul li.whatsapp {
 /* ========================================================= */
 
 .find-someone-section {
-  padding: 100px 0 !important;
+  padding: 80px 0 ;
   background-color: #fff;
 }
 
@@ -1584,7 +1588,7 @@ ul li.whatsapp {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(145deg, #f9d4c4 0%, #f2709c 100%);
+  background-image: linear-gradient(145deg, #dd8863 0%, #a31d3a 100%);
   border-radius: 45% 55% 58% 42% / 30% 45% 55% 70%;
   transition: all 0.3s ease;
 }
@@ -1746,4 +1750,162 @@ ul li.whatsapp {
   .mockup-bg .app-bg {
     max-width: 70%;
   }
+}
+/* ========================================================= */
+/* ============== Video CSS =============== */
+/* ========================================================= */
+
+.video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.video-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.video-modal-overlay.show .video-modal-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.announcement-text {
+    color: #66011b; 
+    font-size: 16px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.domain-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.modal-close-btn {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    line-height: 32px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+    background: #fecaca;
+}
+
+.modal-video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* ========================================================= */
+/* ============== নতুন হার্ট অ্যানিমেশন এলাকার CSS (চূড়ান্ত সমাধান) =============== */
+/* ========================================================= */
+
+.heart-animation-area {
+    position: relative;
+    width: 100%;
+    /* ব্যানার সেকশনের উচ্চতা আগের মতো রাখার জন্য min-height বাড়ানো হলো */
+    min-height: 450px; 
+}
+
+/* আগের হার্ট অ্যানিমেশন (ভাসমান এবং হালকা বড় হওয়া) */
+@keyframes floatingHeart {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-15px) scale(1.05); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.8; }
+}
+
+/* প্রতিটি হার্টের জন্য সাধারণ স্টাইল */
+.heart-animation-area .heart {
+    position: absolute;
+    animation: floatingHeart 4s ease-in-out infinite;
+}
+
+/* প্রতিটি হার্টের জন্য আলাদা সাইজ, পজিশন এবং অ্যানিমেশন ডিলে */
+.heart.heart1 {
+    width: 150px; /* <-- সাইজ বাড়ানো হলো */
+    top: 25%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.heart.heart2 {
+    width: 120px; /* <-- সাইজ বাড়ানো হলো */
+    top: 60%;
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.heart.heart3 {
+    width: 180px; /* <-- সাইজ বাড়ানো হলো */
+    top: 30%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.heart.heart4 {
+    width: 100px; /* <-- সাইজ বাড়ানো হলো */
+    bottom: 15%;
+    right: 50%;
+    animation-delay: 3s;
+}
+
+/* শুধুমাত্র মোবাইল ডিভাইসের জন্য হার্টের সাইজ ছোট করা হলো */
+@media (max-width: 767px) {
+    .heart-animation-area {
+        min-height: 250px; /* মোবাইলের জন্য উচ্চতা কমানো হলো */
+    }
+    .heart.heart1 { width: 80px; }
+    .heart.heart2 { width: 60px; }
+    .heart.heart3 { width: 90px; }
+    .heart.heart4 { width: 50px; }
 }
