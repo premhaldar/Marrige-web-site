@@ -1824,6 +1824,10 @@ ul li.whatsapp {
 }
 
 .modal-close-btn {
+    position: absolute; 
+    top: 15px; 
+    right: 15px;
+    
     background: #fee2e2;
     color: #ef4444;
     border: none;
@@ -1834,7 +1838,9 @@ ul li.whatsapp {
     line-height: 32px;
     cursor: pointer;
     transition: background-color 0.2s;
-    flex-shrink: 0;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close-btn:hover {

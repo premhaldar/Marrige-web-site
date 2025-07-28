@@ -156,6 +156,14 @@
     padding-bottom: 0px
   }
 }
+@media (max-width: 767px) {
+    .main_header_scvBG {
+        border-radius: 0 !important;
+    }
+    .footer-bg {
+        border-radius: 0 !important; 
+    }
+}
 
 @media (max-width: 770px) {}
 
