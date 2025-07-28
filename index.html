@@ -20,7 +20,15 @@
     <!-- ====== all css ====== -->
     <!-- ====== all css ====== -->
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/all.css" />
+    <!-- <link rel="stylesheet" href="css/all.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
@@ -28,6 +36,10 @@
     <link rel="stylesheet" href="css/owl.theme.min.css" />
     <link href="css/mega2.css" rel="stylesheet" />
     <link type="image/x-icon" rel="shortcut icon" href="#" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
       .progress-wrap::after {
         font-family: "Font Awesome\ 5 pro" !important;
@@ -42,7 +54,7 @@
 
   <body>
     <div class="main_header_scvBG">
-      <!-----mobile menu start---- -->
+      <!-- mobile manue start -->
       <div class="menu-position hidden-md hidden-lg">
         <nav
           id="sidebar"
@@ -128,7 +140,7 @@
           <div class="row">
             <div class="nav-main">
               <div class="logo-mobile">
-                <a href="#"><img src="asset/logo/log.png" alt="" /></a>
+                <a href="#"><img src="asset/logo/logo.png" alt="" /></a>
               </div>
               <div class="left t-margin-top hidden-md hidden-lg">
                 <div class="sidebar-icon">
@@ -1671,18 +1683,18 @@
     <!-- ======= All JS Files and Activation Script ======= -->
 
     <!--  jQuery  -->
+    <!-- ======= All JS Files and Activation Script ======= -->
+
+    <!--  jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- Bootstrap JS -->
+    <!--  Bootstrap JS -->
     <script src="js/bootstrap.js"></script>
-
     <!--  Owl Carousel JS -->
     <script src="js/owl.carousel.min.js"></script>
-
-    <!--  others plugin  (such as mCustomScrollbar) -->
+    <!--  mCustomScrollbar JS -->
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <!--  Custom activaction script -->
+    <!--  Custom Activation Script -->
     <script>
       $(document).ready(function () {
         // "Happy Stories"
@@ -1700,22 +1712,18 @@
           },
         });
 
-        // Mobile manue
-        $("#sidebar").mCustomScrollbar({
-          theme: "minimal",
-        });
-
+        // mobile menu
+        $("#sidebar").mCustomScrollbar({ theme: "minimal" });
         $("#dismiss, .overlay").on("click", function () {
           $("#sidebar").removeClass("active");
           $(".overlay").removeClass("active");
         });
-
-        $("#sidebarCollapse").on("click", function () {
+        $("#sidebarCollapse, #sidebarCollapseMobile").on("click", function () {
           $("#sidebar").addClass("active");
           $(".overlay").addClass("active");
         });
 
-        // Custom dropdown
+        // custom dropdown
         $(".custom-select-trigger").on("click", function (event) {
           $(".custom-select")
             .not($(this).closest(".custom-select"))
@@ -1723,7 +1731,6 @@
           $(this).closest(".custom-select").toggleClass("opened");
           event.stopPropagation();
         });
-
         $(".custom-option").on("click", function (event) {
           var value = $(this).data("value");
           var text = $(this).text();
@@ -1734,12 +1741,55 @@
             .text(text);
           $(this).closest(".custom-select").removeClass("opened");
         });
-
         $(document).on("click", function () {
           $(".custom-select").removeClass("opened");
         });
+      });
 
-        // Degit count
+      // =========================================================
+      // love process button
+      // =========================================================
+      (function ($) {
+        "use strict";
+        var progressPath = document.querySelector(".progress-wrap path");
+        if (progressPath) {
+          var pathLength = progressPath.getTotalLength();
+          progressPath.style.transition = progressPath.style.WebkitTransition =
+            "none";
+          progressPath.style.strokeDasharray = pathLength + " " + pathLength;
+          progressPath.style.strokeDashoffset = pathLength;
+          progressPath.getBoundingClientRect();
+          progressPath.style.transition = progressPath.style.WebkitTransition =
+            "stroke-dashoffset 10ms linear";
+
+          var updateProgress = function () {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength) / height;
+            progressPath.style.strokeDashoffset = progress;
+          };
+          updateProgress();
+          $(window).scroll(updateProgress);
+
+          var offset = 100;
+          var duration = 550;
+
+          jQuery(window).on("scroll", function () {
+            if (jQuery(this).scrollTop() > offset) {
+              jQuery(".progress-wrap").addClass("active-progress");
+            } else {
+              jQuery(".progress-wrap").removeClass("active-progress");
+            }
+          });
+
+          jQuery(".progress-wrap").on("click", function (event) {
+            event.preventDefault();
+            jQuery("html, body").animate({ scrollTop: 0 }, duration);
+            return false;
+          });
+        }
+
+        // count degit
         var counted = 0;
         $(window).scroll(function () {
           if ($(".lccc-section-mains").length) {
@@ -1751,9 +1801,7 @@
                   countTo = parseInt($this.text());
 
                 $({ countNum: 0 }).animate(
-                  {
-                    countNum: countTo,
-                  },
+                  { countNum: countTo },
                   {
                     duration: 2000,
                     easing: "swing",
@@ -1770,7 +1818,7 @@
             }
           }
         });
-      });
+      })(jQuery);
     </script>
   </body>
 </html>
