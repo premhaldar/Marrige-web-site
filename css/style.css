@@ -1533,15 +1533,18 @@ ul li.whatsapp {
   font-weight: 700;
   color: #333;
   margin-bottom: 5px;
+  font-family: "Aclonica-Regular";
 }
 
 .sret-titles .count {
   color: #a31d3a;
+  font-family: "Aclonica-Regular";
 }
 
 .sret-titles p {
   font-size: 16px;
   color: #666;
+  font-family: "Aclonica-Regular";
 }
 
 .b-righcity {
@@ -1558,7 +1561,7 @@ ul li.whatsapp {
 }
 
 .find-someone-title h2 {
-  font-family: serif;
+  font-family: "Aclonica-Regular";
   font-size: 42px;
   font-weight: 600;
   color: #333;
@@ -1567,6 +1570,7 @@ ul li.whatsapp {
 .find-someone-title h2 span {
   color: #a31d3a;
   font-style: italic;
+  font-family: "Aclonica-Regular";
 }
 
 .find-someone-title p {
@@ -1574,6 +1578,7 @@ ul li.whatsapp {
   font-size: 14px;
   color: #888;
   letter-spacing: 2px;
+  font-family: "Aclonica-Regular";
 }
 
 .step-box {
@@ -1588,7 +1593,7 @@ ul li.whatsapp {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(145deg, #dd8863 0%, #a31d3a 100%);
+  background-image: linear-gradient(178deg, rgba(102, 1, 27, 0.53) -98%, #66011b 66%);
   border-radius: 45% 55% 58% 42% / 30% 45% 55% 70%;
   transition: all 0.3s ease;
 }
@@ -1608,12 +1613,14 @@ ul li.whatsapp {
   font-weight: 600;
   color: #333;
   margin-bottom: 15px;
+  font-family: "Aclonica-Regular";
 }
 
 .step-box p {
   font-size: 15px;
   color: #6c757d;
   line-height: 1.7;
+  font-family: "Aclonica-Regular";
 }
 
 /* mobilr device */
