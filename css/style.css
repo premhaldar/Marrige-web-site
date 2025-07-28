@@ -1651,11 +1651,13 @@ ul li.whatsapp {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
+  font-family: "Aclonica-Regular";
 }
 
 .app-content-aways h4 {
   font-size: 20px;
   margin-bottom: 25px;
+  font-family: "Aclonica-Regular";
 }
 
 .brek {
@@ -1692,6 +1694,7 @@ ul li.whatsapp {
   max-width: 450px;
   margin-bottom: 30px;
   line-height: 1.7;
+  font-family: "Aclonica-Regular";
 }
 
 .app-play-stres img {
