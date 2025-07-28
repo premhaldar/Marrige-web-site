@@ -1847,62 +1847,61 @@ ul li.whatsapp {
     border-radius: 8px;
 }
 /* ========================================================= */
-/* ============== নতুন হার্ট অ্যানিমেশন এলাকার CSS (চূড়ান্ত সমাধান) =============== */
+/* ============== Hart animation CSS  =============== */
 /* ========================================================= */
 
 .heart-animation-area {
     position: relative;
     width: 100%;
-    /* ব্যানার সেকশনের উচ্চতা আগের মতো রাখার জন্য min-height বাড়ানো হলো */
-    min-height: 450px; 
+    min-height: 560px; 
 }
 
-/* আগের হার্ট অ্যানিমেশন (ভাসমান এবং হালকা বড় হওয়া) */
+
 @keyframes floatingHeart {
     0% { transform: translateY(0) scale(1); opacity: 0.8; }
     50% { transform: translateY(-15px) scale(1.05); opacity: 1; }
     100% { transform: translateY(0) scale(1); opacity: 0.8; }
 }
 
-/* প্রতিটি হার্টের জন্য সাধারণ স্টাইল */
+
 .heart-animation-area .heart {
     position: absolute;
     animation: floatingHeart 4s ease-in-out infinite;
 }
 
-/* প্রতিটি হার্টের জন্য আলাদা সাইজ, পজিশন এবং অ্যানিমেশন ডিলে */
+
 .heart.heart1 {
-    width: 150px; /* <-- সাইজ বাড়ানো হলো */
+    width: 150px; 
     top: 25%;
     left: 20%;
     animation-delay: 0s;
 }
 
 .heart.heart2 {
-    width: 120px; /* <-- সাইজ বাড়ানো হলো */
+    width: 120px; 
     top: 60%;
     left: 40%;
     animation-delay: 1s;
 }
 
 .heart.heart3 {
-    width: 180px; /* <-- সাইজ বাড়ানো হলো */
+    width: 180px; 
     top: 30%;
     right: 10%;
     animation-delay: 2s;
 }
 
 .heart.heart4 {
-    width: 100px; /* <-- সাইজ বাড়ানো হলো */
+    width: 100px; 
     bottom: 15%;
     right: 50%;
     animation-delay: 3s;
 }
 
-/* শুধুমাত্র মোবাইল ডিভাইসের জন্য হার্টের সাইজ ছোট করা হলো */
+/* for mobile device */
 @media (max-width: 767px) {
     .heart-animation-area {
-        min-height: 250px; /* মোবাইলের জন্য উচ্চতা কমানো হলো */
+        min-height: 250px; 
     }
     .heart.heart1 { width: 80px; }
     .heart.heart2 { width: 60px; }
