@@ -1597,15 +1597,21 @@ ul li.whatsapp {
   border-radius: 45% 55% 58% 42% / 30% 45% 55% 70%;
   transition: all 0.3s ease;
 }
-
 .step-box:hover .icon-container {
   transform: scale(1.05) rotate(5deg);
   box-shadow: 0 10px 20px rgba(199, 23, 81, 0.3);
 }
 
 .icon-container img {
-  max-width: 60px;
+  max-width: 92px;
   height: auto;
+}
+.icon-container i{
+  font-size: 60px;
+  color: #fff;
+}
+.icon-container .halal{
+  height: 110px !important;
 }
 
 .step-box h3 {
